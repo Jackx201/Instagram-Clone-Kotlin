@@ -253,11 +253,3 @@ fun SignUp(modifier: Modifier) {
         )
     }
 }
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun DefaultPreview() {
-    InstagramTheme {
-        LoginScreen()
-    }
-}
