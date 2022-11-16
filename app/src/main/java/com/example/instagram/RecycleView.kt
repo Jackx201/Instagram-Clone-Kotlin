@@ -98,10 +98,3 @@ fun FriendsViewGrid(){
 }
 
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun DefaultPreview() {
-    InstagramTheme {
-        FriendsView()
-    }
-}
