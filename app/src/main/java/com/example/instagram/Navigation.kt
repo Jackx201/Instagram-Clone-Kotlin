@@ -18,8 +18,8 @@ fun Screen_First(navigationController: NavHostController){
     Box(modifier = Modifier
         .clickable { navigationController.navigate(Routes.Screen_2.routes) }
         .fillMaxSize()
-        .background(Color(0xF9886478))){
-        Text(text = "This is the first Screen", color = Color(0xF9FFFFFF), fontSize = 24.sp)
+        .background(Color(0xF993D0FF))){
+        Text(text = "This is the first Screen", color = Color(0xF9363636), fontSize = 24.sp)
     }
 }
 
@@ -28,18 +28,18 @@ fun Screen_Second(navigationController: NavHostController){
     Box(modifier = Modifier
         .clickable { navigationController.navigate(Routes.Screen_3.routes) }
         .fillMaxSize()
-        .background(Color(0xF9886478))){
-        Text(text = "This is the second Screen", color = Color(0xF9FFFFFF), fontSize = 24.sp)
+        .background(Color(0xF9F8F1AE))){
+        Text(text = "This is the second Screen", color = Color(0xF93C3C3C), fontSize = 24.sp)
     }
 }
 
 @Composable
 fun Screen_Third(navigationController: NavHostController){
     Box(modifier = Modifier
-        .clickable { navigationController.navigate("Screen_4/2001") }
+        .clickable { navigationController.navigate("Screen_4/2000") }
         .fillMaxSize()
-        .background(Color(0xF9886478))){
-        Text(text = "This is the third Screen", color = Color(0xF9FFFFFF), fontSize = 24.sp)
+        .background(Color(0xF9D68D8D))){
+        Text(text = "This is the third Screen", color = Color(0xF9575757), fontSize = 24.sp)
     }
 }
 
@@ -48,7 +48,7 @@ fun Screen_Quarter(navigationController: NavHostController, name: Int) {
     Box(modifier = Modifier
         .clickable { navigationController.navigate(Routes.Screen_1.routes) }
         .fillMaxSize()
-        .background(Color(0xF9886478))){
-        Text(text = "My name is: Misael de Jesús", color = Color(0xF9FFFFFF), fontSize = 24.sp)
+        .background(Color(0xF9A1D382))){
+        Text(text = "My name is: Zahúl Domínguez", color = Color(0xF93C3C3C), fontSize = 24.sp)
     }
 }
