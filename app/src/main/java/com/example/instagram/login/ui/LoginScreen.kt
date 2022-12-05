@@ -33,8 +33,16 @@ fun LoginScreen(loginViewModel: LoginViewModel) {
             .fillMaxWidth()
             .padding(8.dp)
     ) {
-        Header(Modifier.align(Alignment.TopEnd))
-        Body(Modifier.align(Alignment.Center), loginViewModel)
+        val isLoading : Boolean by loginViewModel.isLoading.observeAsState(initial = false)
+        if(isLoading){
+            Box (Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+                CircularProgressIndicator()
+            }
+        } else {
+            Header(Modifier.align(Alignment.TopEnd))
+            Body(Modifier.align(Alignment.Center), loginViewModel)
+        }
+
     }
 }
 
@@ -72,7 +80,7 @@ fun Body(modifier: Modifier, loginViewModel: LoginViewModel) {
         Spacer(modifier = Modifier.height(16.dp))
         ForgotPassword(modifier = Modifier.align(Alignment.End))
         Spacer(modifier = Modifier.height(32.dp))
-        LoginButton(modifier.fillMaxWidth(), isLoginEnabled)
+        LoginButton(modifier.fillMaxWidth(), isLoginEnabled, loginViewModel)
         Spacer(modifier = Modifier.height(16.dp))
         LoginDivider()
         Spacer(modifier = Modifier.height(16.dp))
@@ -157,9 +165,9 @@ fun ForgotPassword(modifier: Modifier) {
 }
 
 @Composable
-fun LoginButton(modifier: Modifier ,loginEnabled: Boolean) {
+fun LoginButton(modifier: Modifier, loginEnabled: Boolean, loginViewModel: LoginViewModel) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = { loginViewModel.onLoginSelected() },
         modifier = modifier,
         enabled = loginEnabled,
         colors = ButtonDefaults.buttonColors(
@@ -243,13 +251,5 @@ fun SignUp(modifier: Modifier) {
             fontWeight = FontWeight.Bold,
             color = Color.Cyan
         )
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun DefaultPreview() {
-    InstagramTheme {
-        LoginScreen(LoginViewModel())
     }
 }
